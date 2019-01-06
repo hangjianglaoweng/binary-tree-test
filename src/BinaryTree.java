@@ -50,9 +50,9 @@ public class BinaryTree {
 	 */
 	private void firstOrderTraversal(BinaryNode t) {
 		if (t != null) {
+            System.out.print(t.element);
 			firstOrderTraversal(t.left);
 			firstOrderTraversal(t.right);
-			System.out.print(t.element);
 		}
 	}
 
@@ -72,8 +72,8 @@ public class BinaryTree {
 	private void inOrderTraversal(BinaryNode t) {
 		if (t != null) {
 			inOrderTraversal(t.left);
+            System.out.print(t.element);
 			inOrderTraversal(t.right);
-			System.out.print(t.element);
 		}
 	}
 
@@ -141,10 +141,15 @@ public class BinaryTree {
 	}
 
 	public static void main(String[] args) {
+	    // 表达式转为二叉树
 		BinaryTree binaryTree = expressionToTree("ab+cde+**");
+		// 先序遍历打印二叉树
 		binaryTree.firstOrderTraversal();
+        // 中序遍历打印二叉树
 		binaryTree.inOrderTraversal();
+        // 后序遍历打印二叉树
 		binaryTree.postOrderTraversal();
+        // 按层遍历打印二叉树，方便观察树结构
 		binaryTree.levelTraversal();
 	}
 
